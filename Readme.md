@@ -1,7 +1,7 @@
 # Личный проект «Пиксель хантер» [![Build status][travis-image]][travis-url]
 
-* Студент: [Kat Bro](https://up.htmlacademy.ru/ecmascript/1/user/108168).
-* Наставник: `Неизвестно`.
+* Студент: [Kateryna Rybalko](https://up.htmlacademy.ru/ecmascript/1/user/108168).
+* Наставник: [Anton Bannykh](https://htmlacademy.ru/profile/id147292).
 
 ---
 
