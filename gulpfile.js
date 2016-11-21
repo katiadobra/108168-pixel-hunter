@@ -2,6 +2,7 @@
 
 const del = require('del');
 const gulp = require('gulp');
+const webpack = require('gulp-webpack');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
@@ -38,11 +39,19 @@ gulp.task('style', function () {
 });
 
 gulp.task('scripts', function () {
-  return gulp.src('js/**/*.js')
+  return gulp.src('js/main.js')
     .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(sourcemaps.write('.'))
+    .pipe(webpack({
+      devtool: 'source-map',
+      module: {
+        loaders: [
+          { test: /\.js$/, loader: 'babel-loader' },
+        ],
+      },
+      output: {
+        filename: 'main.js'
+      }
+    }))
     .pipe(gulp.dest('build/js/'));
 });
 
