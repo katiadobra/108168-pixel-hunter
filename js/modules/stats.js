@@ -1,11 +1,11 @@
-import getTemplate from '../template';
+import getTemplate from './get-template';
 
 /**
  *
  * @type {Element}
  */
-const stats = getTemplate(` \
-  <header class="header">
+const template =
+  `<header class="header">
     <div class="header__back">
       <span class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -112,7 +112,8 @@ const stats = getTemplate(` \
         <td colspan="5" class="result__total  result__total--final">950</td>
       </tr>
     </table>
-  </div>`
-);
+  </div>`;
 
-export default stats;
+const statsElement = getTemplate(template);
+
+export default statsElement;

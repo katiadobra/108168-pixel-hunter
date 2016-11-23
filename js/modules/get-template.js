@@ -1,6 +1,7 @@
+/** @module modules/get-template */
+
 /**
- *
- * @param {String} templateString
+ * @param {string} templateString
  * @return {Element}
  */
 const getTemplate = (templateString) => {
