@@ -1,5 +1,5 @@
 import getTemplate from './get-template';
-import getPage from './get-page';
+import transitionTo from './utilities';
 import statsElement from './stats';
 
 /**
@@ -55,12 +55,8 @@ const template =
 const gameThreeElement = getTemplate(template);
 const options = gameThreeElement.querySelectorAll('.game__option');
 
-for (const opt of options) {
-  opt.onclick = (e) => {
-    e.preventDefault();
-
-    getPage(statsElement);
-  };
+for (const option of options) {
+  option.addEventListener('click', transitionTo(statsElement));
 }
 
 export default gameThreeElement;

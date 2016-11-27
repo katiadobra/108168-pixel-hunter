@@ -1,5 +1,5 @@
 import getTemplate from './get-template';
-import getPage from './get-page';
+import transitionTo from './utilities';
 import gameTwoElement from './game-2';
 
 /**
@@ -69,11 +69,7 @@ const gameOneElement = getTemplate(template);
 const answerBtns = gameOneElement.querySelectorAll('.game__answer');
 
 for (const btn of answerBtns) {
-  btn.onclick = (e) => {
-    e.preventDefault();
-
-    getPage(gameTwoElement);
-  };
+  btn.addEventListener('click', transitionTo(gameTwoElement));
 }
 
 export default gameOneElement;

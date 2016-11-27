@@ -1,5 +1,5 @@
 import getTemplate from './get-template';
-import getPage from './get-page';
+import transitionTo from './utilities';
 import rulesElement from './rules';
 
 /**
@@ -26,8 +26,6 @@ const template =
 const greetingElement = getTemplate(template);
 const btnNext = greetingElement.querySelector('.greeting__continue');
 
-btnNext.onclick = () => {
-  getPage(rulesElement);
-};
+btnNext.addEventListener('click', transitionTo(rulesElement));
 
 export default greetingElement;

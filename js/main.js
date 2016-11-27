@@ -1,4 +1,4 @@
-import introElement from './modules/intro';
-import getPage from './modules/get-page';
+import introElement from './lib/intro';
+import {setNextPage} from './lib/utilities';
 
-getPage(introElement);
+setNextPage(introElement);

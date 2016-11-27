@@ -3,7 +3,6 @@
 const del = require('del');
 const gulp = require('gulp');
 const webpack = require('gulp-webpack');
-const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
