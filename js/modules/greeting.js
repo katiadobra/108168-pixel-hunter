@@ -1,11 +1,12 @@
-import getTemplate from '../template';
+import getTemplate from './get-template';
+import getPage from './get-page';
+import rulesElement from './rules';
 
 /**
- *
- * @type {Element}
+ * @type {string}
  */
-const greetingElement = getTemplate(` \
-  <div class="greeting  central--blur">
+const template =
+  `<div class="greeting  central--blur">
     <div class="greeting__logo"><img src="img/logo_big.png" width="201" height="89" alt="Pixel Hunter"></div>
     <h1 class="greeting__asterisk">*</h1>
     <div class="greeting__challenge">
@@ -17,7 +18,16 @@ const greetingElement = getTemplate(` \
         Помни, главное — смотреть очень внимательно.</p>
     </div>
     <div class="greeting__continue"><span><img src="img/arrow_right.svg" width="64" height="64" alt="Next"></span></div>
-  </div>`
-);
+  </div>`;
+
+/**
+ * @type {Element} greetingElement
+ */
+const greetingElement = getTemplate(template);
+const btnNext = greetingElement.querySelector('.greeting__continue');
+
+btnNext.onclick = () => {
+  getPage(rulesElement);
+};
 
 export default greetingElement;

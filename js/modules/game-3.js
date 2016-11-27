@@ -1,11 +1,12 @@
-import getTemplate from '../template';
+import getTemplate from './get-template';
+import getPage from './get-page';
+import statsElement from './stats';
 
 /**
- *
- * @type {Element}
+ * @type {string}
  */
-const gameThreeElement = getTemplate(` \
-  <header class="header">
+const template =
+  `<header class="header">
     <div class="header__back">
       <span class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -46,7 +47,20 @@ const gameThreeElement = getTemplate(` \
         <li class="stats__result stats__result--unknown"></li>
       </ul>
     </div>
-  </div>`
-);
+  </div>`;
+
+/**
+ * @type {Element} gameThreeElement
+ */
+const gameThreeElement = getTemplate(template);
+const options = gameThreeElement.querySelectorAll('.game__option');
+
+for (const opt of options) {
+  opt.onclick = (e) => {
+    e.preventDefault();
+
+    getPage(statsElement);
+  };
+}
 
 export default gameThreeElement;

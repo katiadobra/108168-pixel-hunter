@@ -1,11 +1,12 @@
-import getTemplate from '../template';
+import getTemplate from './get-template';
+import getPage from './get-page';
+import gameOneElement from './game-1';
 
 /**
- *
  * @type {Element}
  */
-const rules = getTemplate(` \
-  <header class="header">
+const template =
+  `<header class="header">
     <div class="header__back">
       <span class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -28,7 +29,26 @@ const rules = getTemplate(` \
       <input class="rules__input" type="text" placeholder="Ваше Имя">
       <button class="rules__button  continue" type="submit" disabled>Go!</button>
     </form>
-  </div>`
-);
+  </div>`;
 
-export default rules;
+/**
+ * @type {Element} rulesElement
+ */
+const rulesElement = getTemplate(template);
+const rulesSubmit = rulesElement.querySelector('.rules__button');
+
+rulesElement.querySelector('.rules__input').oninput = function () {
+  if (this.value) {
+    rulesSubmit.removeAttribute('disabled');
+  } else {
+    rulesSubmit.setAttribute('disabled', '');
+  }
+};
+
+rulesSubmit.onclick = (e) => {
+  e.preventDefault();
+
+  getPage(gameOneElement);
+};
+
+export default rulesElement;
