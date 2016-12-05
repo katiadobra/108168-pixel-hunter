@@ -1,9 +1,11 @@
-import getTemplate from './get-template';
-import transitionTo from './utilities';
+import transitionTo, {getTemplate} from './utilities';
 import greetingElement from './greeting';
 
-let intro = {
-  'description': '<sup>*</sup>Это не фото. Это рисунок маслом нидерландского художника-фотореалиста Tjalf Sparnaay.'
+/**
+ * @type {Object} intro
+ */
+const intro = {
+  description: '<sup>*</sup>Это не фото. Это рисунок маслом нидерландского художника-фотореалиста Tjalf Sparnaay.'
 };
 
 /**

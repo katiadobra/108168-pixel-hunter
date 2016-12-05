@@ -1,4 +1,15 @@
 /**
+ * @param {string} templateString
+ * @return {Element}
+ */
+export const getTemplate = (templateString) => {
+  const templateElement = document.createElement('div');
+  templateElement.innerHTML = templateString;
+
+  return templateElement;
+};
+
+/**
  * @param {Element} page
  */
 export const setNextPage = (page) => {
