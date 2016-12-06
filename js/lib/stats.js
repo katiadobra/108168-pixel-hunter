@@ -1,9 +1,12 @@
-import getTemplate from './get-template';
+import {getTemplate} from './utilities';
 
-/**
- *
- * @type {Element}
- */
+const stats = {
+  title: 'Победа!',
+  resultFast: 'Бонус за скорость',
+  resultHeart: 'Бонус за жизни',
+  resultSlow: 'Штраф за медлительность'
+};
+
 const template =
   `<header class="header">
     <div class="header__back">
@@ -14,44 +17,33 @@ const template =
     </div>
   </header>
   <div class="result">
-    <h1>Победа!</h1>
+    <h1>${stats.title}</h1>
     <table class="result__table">
       <tr>
         <td class="result__number">1.</td>
         <td colspan="2">
-          <ul class="stats">
-            <li class="stats__result stats__result--wrong"></li>
-            <li class="stats__result stats__result--slow"></li>
-            <li class="stats__result stats__result--fast"></li>
-            <li class="stats__result stats__result--correct"></li>
-            <li class="stats__result stats__result--wrong"></li>
-            <li class="stats__result stats__result--unknown"></li>
-            <li class="stats__result stats__result--slow"></li>
-            <li class="stats__result stats__result--unknown"></li>
-            <li class="stats__result stats__result--fast"></li>
-            <li class="stats__result stats__result--unknown"></li>
-          </ul>
+        
         </td>
         <td class="result__points">×&nbsp;100</td>
         <td class="result__total">900</td>
       </tr>
       <tr>
         <td></td>
-        <td class="result__extra">Бонус за скорость:</td>
+        <td class="result__extra">${stats.resultFast}:</td>
         <td class="result__extra">1&nbsp;<span class="stats__result stats__result--fast"></span></td>
         <td class="result__points">×&nbsp;50</td>
         <td class="result__total">50</td>
       </tr>
       <tr>
         <td></td>
-        <td class="result__extra">Бонус за жизни:</td>
+        <td class="result__extra">${stats.resultHeart}:</td>
         <td class="result__extra">2&nbsp;<span class="stats__result stats__result--heart"></span></td>
         <td class="result__points">×&nbsp;50</td>
         <td class="result__total">100</td>
       </tr>
       <tr>
         <td></td>
-        <td class="result__extra">Штраф за медлительность:</td>
+        <td class="result__extra">${stats.resultSlow}:</td>
         <td class="result__extra">2&nbsp;<span class="stats__result stats__result--slow"></span></td>
         <td class="result__points">×&nbsp;50</td>
         <td class="result__total">-100</td>
@@ -103,7 +95,7 @@ const template =
       </tr>
       <tr>
         <td></td>
-        <td class="result__extra">Бонус за жизни:</td>
+        <td class="result__extra">${stats.resultHeart}:</td>
         <td class="result__extra">2&nbsp;<span class="stats__result stats__result--heart"></span></td>
         <td class="result__points">×&nbsp;50</td>
         <td class="result__total">100</td>
