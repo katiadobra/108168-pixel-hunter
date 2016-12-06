@@ -1,21 +1,25 @@
 export default {
   time: 0,
-  lifes: [0, 1, 1],
-  type: 3,
+  lives: [0, 1, 1],
   questions: [
     {
-      question: 'Найдите рисунок среди изображений',
-      type: 3,
+      task: 'Найдите рисунок среди изображений',
       triple: true,
       answers: [
         {
-          image: 'http://placehold.it/304x455'
+          image: 'https://placehold.it/304x455',
+          imageWidth: 304,
+          imageHeight: 455,
         },
         {
-          image: 'http://placehold.it/304x455'
+          image: 'https://placehold.it/304x455',
+          imageWidth: 304,
+          imageHeight: 455,
         },
         {
-          image: 'http://placehold.it/304x455'
+          image: 'https://placehold.it/304x455',
+          imageWidth: 304,
+          imageHeight: 455,
         }
       ]
     }

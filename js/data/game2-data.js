@@ -1,15 +1,15 @@
 export default {
   time: 0,
-  lifes: [0, 1, 1],
-  type: 2,
+  lives: [0, 1, 1],
   questions: [
     {
-      question: 'Угадай, фото или рисунок?',
-      type: 2,
+      task: 'Угадай, фото или рисунок?',
       wide: true,
       answers: [
         {
-          image: 'http://placehold.it/705x455',
+          image: 'https://placehold.it/705x455',
+          imageWidth: 705,
+          imageHeight: 455,
           variants: [
             {
               type: 'photo',

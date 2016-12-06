@@ -12,7 +12,7 @@ export default (game) => {
     </div>
     <h1 class="game__timer">${game.time}</h1>
     <div class="game__lives">
-    ${game.lifes.map( (life) => {
+    ${game.lives.map( (life) => {
       return life === 1 ?
       '<img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">' :
       '<img src="img/heart__empty.svg" class="game__heart" alt="Life" width="32" height="32">';

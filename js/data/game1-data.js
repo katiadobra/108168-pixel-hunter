@@ -1,14 +1,16 @@
 export default {
   time: 0,
-  lifes: [0, 1, 1],
+  lives: [0, 1, 1],
   type: 1,
   questions: [
     {
-      question: 'Угадайте для каждого изображения фото или рисунок?',
+      task: 'Угадайте для каждого изображения фото или рисунок?',
       type: 1,
       answers: [
         {
-          image: 'http://placehold.it/468x458',
+          image: 'https://placehold.it/468x458',
+          imageWidth: 468,
+          imageHeight: 458,
           variants: [
             {
               type: 'photo',
@@ -21,7 +23,9 @@ export default {
           ]
         },
         {
-          image: 'http://placehold.it/468x458',
+          image: 'https://placehold.it/468x458',
+          imageWidth: 468,
+          imageHeight: 458,
           variants: [
             {
               type: 'photo',

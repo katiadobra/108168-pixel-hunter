@@ -1,5 +1,4 @@
 import {getTemplate} from './utilities';
-// import statsView from './stats-view';
 
 const stats = {
   title: 'Победа!',
