@@ -1,6 +1,6 @@
 import answerView from './answer-view';
 
-const setClass = (data) => {
+const getClassName = (data) => {
   if (data.wide) {
     return 'game__content--wide';
   } else if (data.triple) {
@@ -12,7 +12,7 @@ const setClass = (data) => {
 export default (game) => {
   return `
     <p class="game__task">${game.task}</p>
-    <form class="game__content ${setClass(game)}">
+    <form class="game__content ${getClassName(game)}">
       ${game.answers.map( (it, i) => answerView(it, i)).join('')}
     </form>`;
 };
