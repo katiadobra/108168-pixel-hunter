@@ -1,7 +1,12 @@
 import questionView from './question-view';
+import transitionTo, {getTemplate} from './utilities';
 import statsView from './stats-view';
+import livesView from './lives-view';
+import gameData from '../data/data';
+import statsElement from './stats';
 
-export default (game) => {
+const getGame = (data, question) => {
+
   const content = `
   <header class="header">
     <div class="header__back">
@@ -10,20 +15,42 @@ export default (game) => {
           <img src="img/logo_small.png" width="101" height="44">
         </span>
     </div>
-    <h1 class="game__timer">${game.time}</h1>
+    <h1 class="game__timer">${data.time}</h1>
     <div class="game__lives">
-    ${game.lives.map( (life) => {
-      return life === 1 ?
-      '<img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">' :
-      '<img src="img/heart__empty.svg" class="game__heart" alt="Life" width="32" height="32">';
-    }).join('')}
+      ${livesView(data.lives)}
     </div>
   </header>
   <div class="game">
-    ${game.questions.map( (question) => questionView(question)).join()}
-    ${statsView(game)}
+    ${questionView(question)}
+    <div class="stats">
+      <ul class="stats">
+        ${statsView(data)}
+      </ul>
+   </div>
   </div>`;
 
-
-  return `${content}`;
+  return getTemplate(`${content}`);
 };
+
+let nextElement = statsElement;
+
+// TODO: переделать из императивного на функциональное
+for (let i = gameData.questions.length - 1; i >= 0; i--) {
+  let element = getGame(gameData, gameData.questions[i]);
+  let answerBtns;
+
+  if (gameData.questions[i].triple) {
+    answerBtns = element.querySelectorAll('.game__option');
+
+  } else {
+    answerBtns = element.querySelectorAll('.game__answer');
+  }
+
+  for (const btn of answerBtns) {
+    btn.addEventListener('click', transitionTo(nextElement));
+  }
+
+  nextElement = element;
+}
+
+export default nextElement;
