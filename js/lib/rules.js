@@ -1,5 +1,5 @@
 import transitionTo, {getTemplate} from './utilities';
-import gameOneElement from './game-1';
+import gameElement from './game';
 
 /**
  * @type {Object} rules
@@ -60,6 +60,6 @@ rulesElement.querySelector('.rules__input').oninput = function () {
   }
 };
 
-rulesSubmit.addEventListener('click', transitionTo(gameOneElement));
+rulesSubmit.addEventListener('click', transitionTo(gameElement));
 
 export default rulesElement;

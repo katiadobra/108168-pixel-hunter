@@ -78,7 +78,6 @@ const template =
         <td class="result__number">3.</td>
         <td colspan="2">
           <ul class="stats">
-            <li class="stats__result stats__result--wrong"></li>
             <li class="stats__result stats__result--slow"></li>
             <li class="stats__result stats__result--fast"></li>
             <li class="stats__result stats__result--correct"></li>
