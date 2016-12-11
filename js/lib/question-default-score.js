@@ -5,17 +5,16 @@
  * @param {Array} correctAnswers
  * @param {Number} time
  */
+let scores = 0;
+let equal = true;
 export default (userAnswer, correctAnswers, time) => {
-  let scores = 0;
-
-  let equal = true;
 
 /**
  * Compare user answer with correct answer
  * Set score
  */
-  for (i = 0; i < userAnswer.length; i++) {
-    if (userAnswer[i] != correctAnswers[i]) {
+  for (let i = 0; i < userAnswer.length; i++) {
+    if (userAnswer[i] !== correctAnswers[i]) {
       equal &= false;
     } else {
       equal &= true;
@@ -29,4 +28,4 @@ export default (userAnswer, correctAnswers, time) => {
       }
     }
   }
-}
+};

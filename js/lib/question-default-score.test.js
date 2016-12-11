@@ -2,7 +2,7 @@ import assert from 'assert';
 import score from './question-default-score';
 
 describe('Test score engine', () => {
-  describe('Setting'), () => {
+  describe('Setting', () => {
     it('Should return 100 points for default question when userAnswer is correct', () => {
       let scorePoints = score(['photo', 'paint'], ['photo', 'paint'], 15);
 
@@ -28,13 +28,13 @@ describe('Test score engine', () => {
 
       assert.equals(scorePoints, 0);
     });
-  };
+  });
 
-  describe('Failures'), () => {
+  describe('Failures', () => {
     it('Throws an error if negative value of time passed', () => {
       let scorePoints = score(['photo', 'paint'], ['paint', 'photo'], -8);
 
       assert.equals(scorePoints, 0);
     });
-  };
+  });
 });
