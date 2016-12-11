@@ -12,11 +12,13 @@ export default {
           variants: [
             {
               type: 'photo',
-              value: 'Фото'
+              value: 'Фото',
+              valid: true
             },
             {
               type: 'paint',
-              value: 'Рисунок'
+              value: 'Рисунок',
+              valid: false
             }
           ]
         },
@@ -27,11 +29,13 @@ export default {
           variants: [
             {
               type: 'photo',
-              value: 'Фото'
+              value: 'Фото',
+              valid: false
             },
             {
               type: 'paint',
-              value: 'Рисунок'
+              value: 'Рисунок',
+              valid: true
             }
           ]
         }

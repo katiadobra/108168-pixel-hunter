@@ -2,7 +2,7 @@ import questionView from './question-view';
 import transitionTo, {getTemplate} from './utilities';
 import statsView from './stats-view';
 import livesView from './lives-view';
-import gameData from '../data/data';
+import gameData from '../data/game-data';
 import statsElement from './stats';
 
 const getGame = (data, question) => {
@@ -49,6 +49,11 @@ for (let i = gameData.questions.length - 1; i >= 0; i--) {
   for (const btn of answerBtns) {
     btn.addEventListener('click', transitionTo(nextElement));
   }
+
+// TODO: обработчик для каждого типа вопроса и в обработчике будет логика подсчёта очков и переход на след. экран
+// - повесить обработчик клика кнопки на форме
+// - логика
+// - вызываться ф-я из question-default-score.js / question-wide-score.js или question-triple-score.js
 
   nextElement = element;
 }
