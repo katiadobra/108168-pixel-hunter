@@ -17,11 +17,6 @@ export default (userAnswer, correctAnswers, time) => {
   for (let i = 0; i < userAnswer.length; i++) {
     if (userAnswer[i] !== correctAnswers[i]) {
       equal &= false;
-      score = 0;
-    } else {
-      equal &= true;
-      score += 100;
-
     }
   }
 
