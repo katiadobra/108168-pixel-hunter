@@ -4,10 +4,11 @@
  * @param {Array} userAnswer
  * @param {Array} correctAnswers
  * @param {Number} time
+ * @return {Number} score
  */
-let scores = 0;
-let equal = true;
 export default (userAnswer, correctAnswers, time) => {
+  let score = 0;
+  let equal = true;
 
 /**
  * Compare user answer with correct answer
@@ -16,16 +17,23 @@ export default (userAnswer, correctAnswers, time) => {
   for (let i = 0; i < userAnswer.length; i++) {
     if (userAnswer[i] !== correctAnswers[i]) {
       equal &= false;
+      score = 0;
     } else {
       equal &= true;
-      scores += 100;
+      score += 100;
 
-      // slow or fast answer
-      if (time > 20) {
-        scores -= 50;
-      } else if (time < 10) {
-        scores += 50;
-      }
     }
   }
+
+  if (equal) {
+    score += 100;
+  }
+
+  if (equal && time > 20) {
+    score -= 50;
+  } else if (equal && time < 10) {
+    score += 50;
+  }
+
+  return score;
 };
