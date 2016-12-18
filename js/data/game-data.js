@@ -1,6 +1,6 @@
 export default {
-  time: 0,
-  lives: 1,
+  time: 30,
+  lives: 2,
   questions: [
     {
       task: 'Угадайте для каждого изображения фото или рисунок?',
